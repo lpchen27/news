@@ -1,0 +1,11 @@
+<div class="inews_box">
+	<div ng-repeat="data in datas | limitTo : 8" class="news_list">
+		<a ng-href="{{data.url}}">
+			<div class="content">
+				<p>{{data.title}}</p>
+				<img ng-src="{{data.thumbnail_pic_s}}" alt="">
+			</div>			
+			<p class="detail"><span class="author_name">{{data.author_name}}</span><span class='date'>{{data.date}}</span><span class='type'>{{data.type}}</span></p>
+		</a>
+	</div>	
+</div>

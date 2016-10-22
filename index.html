@@ -1,12 +1,143 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name='viewport' content='width=devide-width,initial-scale=1,user-scalable=no,maximum-scale=1'>
+<html lang="en" ng-app='lpchen'>
+<head>		
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1'>
 	<title>每日新闻</title>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-route.js"></script>
 </head>
 <body>
-
-
+	<div ng-view></div>
 </body>
+<script>	
+	var app = angular.module('lpchen',['ngRoute']);	
+	app.config(['$routeProvider',function($routeProvider){
+		$routeProvider
+		.when('/news/:name',{
+			templateUrl : 'route/news.html',
+			controller : 'newsCtrl',
+		})
+		.when('/weather',{
+			templateUrl : 'route/weather.html',
+			controller : 'weatherCtrl',
+		})
+		.otherwise({
+			redirectTo : '/news/1',
+		})
+	}]);
+
+	app.controller('newsCtrl',function($scope,$routeParams,ajax,$http){
+		$scope.name = "lpchen";
+		$scope.datas = [];
+		$scope.type = 'top';
+		$scope.ajax = function(type){  //定义一个获取新闻数据的jsonp请求函数
+			$http.jsonp('php/news.php',{
+				params : {
+					type : type,
+					callback : 'JSON_CALLBACK',
+				},
+			}).success(function(data){
+				$scope.datas = data.result.data;
+				//$scope.$apply($scope.datas);
+				//console.log($scope.datas);
+			});
+		}
+		$scope.ajax($scope.type);
+	})
+
+	app.controller('weatherCtrl',function($scope,$routeParams){
+		console.log($routeParams);
+	})
+
+	app.directive('iheader',function(){
+		return {
+			templateUrl : 'directive/iheader.html',
+		};
+	})
+
+	app.directive('inav',function(){
+		return {
+			templateUrl : 'directive/inav.html',
+			link : function(scope,ele,attr){
+				var el = ele;
+				var x1,x2;
+				var ul = el.find('ul');
+				var li = el.find('li');
+				var len = li.length;
+				var w = li[0].clientWidth;
+				var clientWidth = parseInt(document.body.clientWidth);
+			
+				ul.css('width',len*w+'px');  //定义ul的宽度
+				ul.css('left','0');
+				//console.log(ul.css('left'));
+				el.on('touchstart',function(e){
+					x1 = parseInt(e.changedTouches[0].clientX);
+					//console.log(x1);
+					el.on('touchmove',function(e){
+						var x2 = parseInt(e.changedTouches[0].clientX);
+						var offsetX = x2 - x1;
+						var left = parseInt(ul.css('left')) + offsetX;
+						console.log(left);
+						if(left >= 0 ){
+							left = 0;
+						}else if(left <= -len*w + clientWidth ){
+							left = -len*w + clientWidth;
+						}
+						ul.css('left',left+'px');
+						x1 = x2;
+					})
+				})
+			}
+		};
+	});
+
+	app.directive('inews',function(){
+		return {
+			templateUrl : 'directive/inews.html',
+			link : function(scope,ele,attr){
+				var el = ele;
+				console.log(scope);
+				ele.on('touchstart',function(e){
+					var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+					console.log(e);
+					if(scrollTop == 0){  //当页面在顶部时
+						var y1 = e.changedTouches[0].clientY;
+						el.on('touchend',function(e){
+							var y2 = e.changedTouches[0].clientY;
+							console.log(y2 - y1);
+							if(y2 - y1 >= 100){  //且下拉距离大于150时，重新刷新页面
+								console.log('refresh');
+								scope.ajax('guoji'); //重新请求数据
+							}
+						});
+					}
+				})
+			}
+		};
+	});
+
+	app.service('ajax',function($http){
+		return {
+			refresh : function(){
+				$http.jsonp('php/news.php',{
+					params : {
+						type : 'top',
+						callback : 'JSON_CALLBACK',
+					},
+				}).success(function(data){
+					return data;
+				});
+			}
+		};
+	});
+
+	/*  新闻接口
+	http://v.juhe.cn/toutiao/index?type=top&key=c699e89f1577064ecd4ae106e79ba761
+	key	string	是	应用APPKEY
+ 	type	string	否	类型,,top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)*/
+</script>
 </html>
