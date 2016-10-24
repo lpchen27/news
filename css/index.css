@@ -180,3 +180,7 @@ inavcontent .delete_nav ul li, inavcontent .add_nav ul li {
   width: 100vw;
   height: 100vh;
 }
+
+iweather {
+  font-size: 0.16rem;
+}
