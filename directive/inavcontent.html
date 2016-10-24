@@ -1,0 +1,13 @@
+<div class='delete_nav'>
+	<h3>我的频道（点击删除）</h3>
+	<ul>
+		<li style="background: #ccc;">头条</li>
+		<li ng-repeat='nav in navs' ng-click='delete(nav.class)'>{{nav.content}}</li>
+	</ul>
+</div>
+<div class='add_nav'>
+	<h3>推荐频道（点击添加）</h3>
+	<ul>
+		<li ng-repeat='no_nav in no_navs' ng-click='add(no_nav.class)'>{{no_nav.content}}</li>
+	</ul>
+</div>

@@ -1,25 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="module">
 <head>
-	<meta charset="UTF-8">
-	<title>测试</title>
-</head>
-<body>
+    <meta charset="UTF-8">
+    <title>百度地图--home</title>
+    <style>
+        html,body,#myMap{
+            width:100%;
+            height:100%;
+            margin:0;
+            padding: 0;
+        }
 
-	
-<script>
-	var url = 'http://localhost:8080/lastProject/remote.php?name=lisi&age=12&callback=jsonp';
-	var script = document.createElement('script');
-	script.type = "text/javascript";
-	script.src = url;
-	var body = document.getElementsByTagName('body')[0];
-	body.appendChild(script);
-	function jsonp(data){
-		console.log(data);
-		var rel = data;
-		alert(data.age);
-	}
-</script>
+        .searchBox{
+            position:absolute;
+            top:20px;
+            left:30px;
+        }
+        input{
+            height:30px;
+            line-height: 30px;
+            text-indent:10px;
+            font-size: 24px;
+        }
+        #result{
+            position:absolute;
+            top:100px;
+            left:20px;
+        }
+    </style>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=Oug8jN2YYpG6C7BL6KPuaITFyLxTzlbH" type="text/javascript"></script>
+    <script src="lib/angular.min.js"></script>
+    <script>
+        var app = angular.module('module',[]);
+        app.controller('indexCtrl',function($scope){
+            var map = new BMap.Map('myMap');
+            map.centerAndZoom('广州',14);
+            //map.enableScrollWheelZoom(true);  //允许滚动鼠标缩放
+
+            //浏览器定位，获取经纬度
+          /*  var geolocation = new BMap.Geolocation();
+            geolocation.getCurrentPosition(function(r){
+                var mark = new BMap.Marker(r.point);
+                map.addOverlay(mark);
+                map.panTo(r.point);
+            },function(error){
+                console.log(error);
+            });
+
+            $scope.bool = true;
+
+            var local = new BMap.LocalSearch(map,{
+                renderOptions : {map:map}
+            });
+
+            $scope.search1 = function(){
+                local.search($scope.place);
+            }
+
+            var routePolicy = [BMAP_TRANSIT_POLICY_LEAST_TIME,BMAP_TRANSIT_POLICY_LEAST_TRANSFER,BMAP_TRANSIT_POLICY_LEAST_WALKING,BMAP_TRANSIT_POLICY_AVOID_SUBWAYS];
+            var transit = new BMap.TransitRoute(map,{
+                renderOptions : {map:map,panel:'result'},
+                policy:0
+            })
+            $scope.search2 = function(){
+                console.log(2);
+                transit.setPolicy(routePolicy[$scope.model]);
+                transit.search($scope.start,$scope.end);
+            }
+            $scope.changeModel = function(){
+                $scope.bool = !$scope.bool;
+            }*/
+        });
+    </script>
+</head>
+<body ng-controller="indexCtrl">
+    <div id="myMap"></div>
+    <div class="searchBox">
+        <input type="text" placeholder="查询地点"  ng-model="place" ng-show="bool">
+        <input type="button" ng-click="search1()" ng-show="bool" value="查询">
+        <input type="button" value="路线切换" ng-show="bool" ng-click="changeModel()">
+        <input type="text" placeholder="起点" ng-model="start" ng-show="!bool">   
+        <input type="text" placeholder="终点" ng-model="end" ng-show="!bool">
+        <input type="button" ng-click="search2()" ng-show="!bool" value="查询">   
+        <input type="button" value="地点切换" ng-show="!bool" ng-click="changeModel()">
+        <select ng-model="model" ng-show="!bool">
+            <option value="0" ng-selected="true">最少时间</option>  //用selected="selected"可能会有问题出现
+            <option value="1">最少换乘</option>
+            <option value="2">最少步行</option>
+            <option value="3">不乘地铁</option>
+        </select>
+    </div>
+    <div id="result" ng-show="!bool"></div>
+
+
 
 </body>
 </html>

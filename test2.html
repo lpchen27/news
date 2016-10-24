@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度地图</title>
+	<style>
+		#myMap{
+			width:100vw;
+			height:100vh;
+		}
+	</style>
+</head>
+<body>
+	<div id='myMap'></div>
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=Oug8jN2YYpG6C7BL6KPuaITFyLxTzlbH" type="text/javascript"></script>
+	<script>
+		var map = new BMap.Map('myMap');
+		map.centerAndZoom('广州',14);
+	</script>
+</body>
+</html>

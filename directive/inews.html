@@ -1,5 +1,5 @@
 <div class="inews_box">
-	<div ng-repeat="data in datas | limitTo : 8" class="news_list">
+	<div ng-repeat="data in datas | limitTo : news_num" class="news_list">
 		<a ng-href="{{data.url}}">
 			<div class="content">
 				<p>{{data.title}}</p>
