@@ -1,0 +1,161 @@
+@charset "UTF-8";
+iweather {
+  font-size: 0.16rem;
+  color: #fff;
+}
+iweather .weatherBox {
+  height: 100vh;
+  background: url(../image/bg.jpeg) no-repeat;
+  background-size: auto 100%;
+  overflow: hidden;
+}
+iweather .weatherBox .city {
+  text-align: center;
+  font-size: 0.24rem;
+  margin-top: 0.2rem;
+  font-family: '微软雅黑';
+}
+iweather .weatherBox .info {
+  text-align: center;
+  font-size: 0.12rem;
+  color: #ddd;
+  margin-top: 0.05rem;
+}
+iweather .weatherBox .temp {
+  text-align: center;
+  font-size: 0.6rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  margin-top: -0.1rem;
+}
+iweather .weatherBox .temp sup {
+  font-size: 0.25rem;
+}
+iweather .weatherBox .today {
+  text-align: center;
+  margin-top: 0.1rem;
+  font-size: 0.14rem;
+  color: #eee;
+}
+iweather .weatherBox .today .date {
+  transform: translateY(100%);
+}
+iweather .weatherBox .today .nongli {
+  font-size: 0.1rem;
+  margin-left: 0.1rem;
+}
+iweather .weatherBox .future {
+  width: 100%;
+  margin-top: 0.3rem;
+  font-size: 0.12rem;
+}
+iweather .weatherBox .future .p1 {
+  width: 90%;
+  padding: 0 5%;
+  padding-bottom: 0.05rem;
+  border-bottom: 1px solid #eee;
+}
+iweather .weatherBox .future .p1 .weekday {
+  margin-right: 0.1rem;
+}
+iweather .weatherBox .future .p1 .max_temp {
+  float: right;
+  margin-left: 0.2rem;
+}
+iweather .weatherBox .future .p1 .min_temp {
+  float: right;
+  color: #eee;
+}
+iweather .weatherBox .future ul {
+  width: 90%;
+  padding: 0 5%;
+  margin-top: 0.06rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.08rem;
+}
+iweather .weatherBox .future ul li {
+  height: 0.2rem;
+  line-height: 0.2rem;
+}
+iweather .weatherBox .future ul li .weekday {
+  margin-right: 1rem;
+}
+iweather .weatherBox .future ul li .max_temp {
+  float: right;
+  margin-left: 0.2rem;
+}
+iweather .weatherBox .future ul li .min_temp {
+  float: right;
+  color: #eee;
+}
+iweather .weatherBox .detail {
+  font-size: 0.12rem;
+}
+iweather .weatherBox .detail ul li {
+  margin: 0.1rem 0;
+  width: 100%;
+}
+iweather .weatherBox .detail ul li p {
+  overflow: hidden;
+  height: 0.14rem;
+  line-height: 0.14rem;
+}
+iweather .weatherBox .detail ul li p span {
+  float: left;
+}
+iweather .weatherBox .detail ul li p span:nth-child(1) {
+  text-align: right;
+  width: 47%;
+  margin-right: 3%;
+}
+iweather .weatherBox .detail ul li p span:nth-child(2) {
+  width: 47%;
+  margin-left: 3%;
+}
+iweather .weatherBox .detail ul li.advice p {
+  width: 90%;
+  margin: 0 auto;
+  height: auto;
+  line-height: 0.16rem;
+  margin-bottom: 0.1rem;
+}
+iweather .weatherBox .otherCity {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+iweather .weatherBox .otherCity input {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  height: 0.20rem;
+  line-height: 0.20rem;
+  outline: none;
+  margin-top: 0.1rem;
+  margin-right: 0.1rem;
+  width: 0.8rem;
+  text-indent: 0.1rem;
+}
+iweather .weatherBox .otherCity .icon-sousuo {
+  display: inline-block;
+  font-size: 0.12rem;
+  transform: translateX(-110%);
+}
+iweather .weatherBox .otherCity ::-moz-placeholder {
+  color: #ccc;
+}
+iweather .weatherBox .otherCity ::-webkit-input-placeholder {
+  color: #ccc;
+}
+iweather .weatherBox .otherCity :-ms-input-placeholder {
+  color: #ccc;
+}
+iweather .weatherBox .returnback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0.1rem;
+  font-size: 0.2rem;
+  font-weight: bold;
+  color: #ccc;
+}

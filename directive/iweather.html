@@ -1,9 +1,10 @@
-	<p class='city'>{{city}}</p>
+<div class='weatherBox'>
+	<p class='city'>{{data.pm25.cityName}}市</p>
 	<p class='info'><span class="iconfont {{flag}}"></span>{{data.realtime.weather.info}}</p>
-	<p class='temp'>{{data.realtime.weather.temperature}}</p>
-	<p><span class='date'>{{data.realtime.date}}</span><span class='nongli'>{{data.weather[0].nongli}}</span></p>
+	<p class='temp'><span>{{data.realtime.weather.temperature}}</span><sup>o</sup></p>
+	<p class='today'><span class='date'>{{data.realtime.date}}</span><span class='nongli'>{{data.weather[0].nongli}}</span></p>
 	<div class='future'>
-		<p><span class='weekday'>星期{{data.weather[0].week}}</span><span>今天</span><span class="max_temp">{{data.weather[0].info.day[2]}}</span><span class="min_temp">{{data.weather[0].info.night[2]}}</span></p>
+		<p class='p1'><span class='weekday'>星期{{data.weather[0].week}}</span><span>今天</span><span class="max_temp">{{data.weather[0].info.day[2]}}</span><span class="min_temp">{{data.weather[0].info.night[2]}}</span></p>
 		<ul>
 			<li class='day2'><span class='weekday'>星期{{data.weather[1].week}}</span><span class='iconfont {{arr[0]}}'></span><span class="max_temp">{{data.weather[1].info.day[2]}}</span><span class="min_temp">{{data.weather[1].info.night[2]}}</span></li>
 			<li class='day2'><span class='weekday'>星期{{data.weather[2].week}}</span><span class='iconfont {{arr[1]}}'></span><span class="max_temp">{{data.weather[2].info.day[2]}}</span><span class="min_temp">{{data.weather[2].info.night[2]}}</span></li>
@@ -25,10 +26,15 @@
 				<p><span>风速:</span><span>{{data.weather[0].info.day[4]}}</span></p>	
 				<p><span>紫外线:</span><span>{{data.life.info.ziwaixian[0]}}</span></p>	
 			</li>
-			<li>
+			<li class='advice'>
 				<p>穿衣: {{data.life.info.chuanyi[1]}}</p>	
 				<p>运动: {{data.life.info.yundong[1]}}</p>		
 			</li>
 		</ul>
 		
 	</div>
+
+	<p class='otherCity'><input type="text" ng-model='newCity' placeholder="其他城市"><span class='iconfont icon-sousuo' ng-click='ajax(newCity)'></span></p>
+
+	<p class='returnback' ng-click='returnback()'>&lt;</p>	
+</div>	

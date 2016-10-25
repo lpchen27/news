@@ -15,8 +15,14 @@ a {
 }
 
 /*媒体查询*/
-@media screen and (max-width: 960px) {
+
+html, body {
+    font-size: 100px;
+    width:100%;
+    min-width:300px;
+}
+/* @media screen and (max-width: 960px) {
   html, body {
     font-size: 100px;
   }
-}
+} */
