@@ -13,12 +13,12 @@ iheader,inavheader{
 	position:fixed;
 	top:0;
 	width:100%;
-	font-size:0.16rem;
+	font-size:0.24rem;
 	background : #d43d3d;
 	color:#fff;
 	text-align:center;
-	height:0.4rem;
-	line-height:0.4rem;
+	height:0.6rem;
+	line-height:0.6rem;
 	font-family:'SimHei';
 	z-index:10;
 
@@ -34,13 +34,12 @@ iheader,inavheader{
 		.weather{
 			position:absolute;
 			right:0;
-			font-size:0.10rem;
+			font-size:0.16rem;
 			margin-right:0.1rem;
-			top:0;
 			width:0.8rem;
-			height:0.16rem;
-			line-height:0.16rem;
-			top:0.12rem;
+			height:0.4rem;
+			line-height:0.4rem;
+			top:0.1rem;
 			text-align: center;
 			background: #fff;
 			border-radius: 0.04rem;
@@ -63,10 +62,10 @@ inavheader{
 
 inav{
 	position:fixed;
-	top:0.4rem;
-	height:0.24rem;
-	line-height:0.24rem;
-	font-size:0.14rem;
+	top:0.6rem;
+	height:0.4rem;
+	line-height:0.4rem;
+	font-size:0.2rem;
 	background: #f4f5f6;
 	overflow:hidden;
 	width:100%;
@@ -74,15 +73,15 @@ inav{
 
 	.inav_box{
 		width:100%;
-		height:0.24rem;
-		line-height:0.24rem;
+		height:0.4rem;
+		line-height:0.4rem;
 		position:relative;
 		ul{
 			width:1000%;
 			position:absolute;
 			top:0;
 			left:0;
-			height:0.24rem;
+			height:0.4rem;
 
 			li{
 				float:left;
@@ -99,11 +98,11 @@ inav{
 			position:absolute;
 			top:0;
 			right:0;
-			width:0.30rem;
-			height:0.24rem;
+			width:0.4rem;
+			height:0.4rem;
 			text-align:center;
 			background:#f4f5f6;
-			font-size:0.30rem;
+			font-size:0.4rem;
 			color:#d43d3d;
 			font-weight:bold;
 			//border-left:1px solid #ccc;
@@ -120,12 +119,12 @@ inews{
 	.inews_box{
 		width:90%;
 		margin:0 auto;
-		margin-top:0.64rem;
+		margin-top:1rem;
 		overflow:hidden;
 
 		.news_list{
 			font-family: "微软雅黑";
-			font-size:0.12rem;
+			font-size:0.16rem;
 			padding-bottom:0.1rem;
 			padding-top:0.1rem;
 			border-bottom:1px solid #ccc;

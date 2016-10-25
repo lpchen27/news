@@ -4,50 +4,49 @@ iweather {
   color: #fff;
 }
 iweather .weatherBox {
-  height: 100vh;
   background: url(../image/bg.jpeg) no-repeat;
-  background-size: auto 100%;
+  background-size: 100% 100%;
   overflow: hidden;
 }
 iweather .weatherBox .city {
   text-align: center;
-  font-size: 0.24rem;
+  font-size: 0.30rem;
   margin-top: 0.2rem;
   font-family: '微软雅黑';
 }
 iweather .weatherBox .info {
   text-align: center;
-  font-size: 0.12rem;
+  font-size: 0.16rem;
   color: #ddd;
   margin-top: 0.05rem;
 }
 iweather .weatherBox .temp {
   text-align: center;
-  font-size: 0.6rem;
-  height: 0.6rem;
-  line-height: 0.6rem;
+  font-size: 0.8rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
   margin-top: -0.1rem;
 }
 iweather .weatherBox .temp sup {
-  font-size: 0.25rem;
+  font-size: 0.30rem;
 }
 iweather .weatherBox .today {
   text-align: center;
   margin-top: 0.1rem;
-  font-size: 0.14rem;
+  font-size: 0.20rem;
   color: #eee;
 }
 iweather .weatherBox .today .date {
   transform: translateY(100%);
 }
 iweather .weatherBox .today .nongli {
-  font-size: 0.1rem;
+  font-size: 0.2rem;
   margin-left: 0.1rem;
 }
 iweather .weatherBox .future {
   width: 100%;
   margin-top: 0.3rem;
-  font-size: 0.12rem;
+  font-size: 0.18rem;
 }
 iweather .weatherBox .future .p1 {
   width: 90%;
@@ -89,7 +88,7 @@ iweather .weatherBox .future ul li .min_temp {
   color: #eee;
 }
 iweather .weatherBox .detail {
-  font-size: 0.12rem;
+  font-size: 0.18rem;
 }
 iweather .weatherBox .detail ul li {
   margin: 0.1rem 0;
@@ -97,8 +96,8 @@ iweather .weatherBox .detail ul li {
 }
 iweather .weatherBox .detail ul li p {
   overflow: hidden;
-  height: 0.14rem;
-  line-height: 0.14rem;
+  height: 0.20rem;
+  line-height: 0.20rem;
 }
 iweather .weatherBox .detail ul li p span {
   float: left;
@@ -116,7 +115,7 @@ iweather .weatherBox .detail ul li.advice p {
   width: 90%;
   margin: 0 auto;
   height: auto;
-  line-height: 0.16rem;
+  line-height: 0.20rem;
   margin-bottom: 0.1rem;
 }
 iweather .weatherBox .otherCity {
@@ -125,21 +124,21 @@ iweather .weatherBox .otherCity {
   right: 0;
 }
 iweather .weatherBox .otherCity input {
+  font-size: 0.18rem;
   background: rgba(255, 255, 255, 0.1);
   border: none;
   color: #fff;
-  height: 0.20rem;
-  line-height: 0.20rem;
+  height: 0.24rem;
+  line-height: 0.24rem;
   outline: none;
   margin-top: 0.1rem;
-  margin-right: 0.1rem;
-  width: 0.8rem;
+  margin-right: 0.05rem;
+  width: 0.9rem;
   text-indent: 0.1rem;
 }
 iweather .weatherBox .otherCity .icon-sousuo {
   display: inline-block;
-  font-size: 0.12rem;
-  transform: translateX(-110%);
+  font-size: 0.24rem;
 }
 iweather .weatherBox .otherCity ::-moz-placeholder {
   color: #ccc;
@@ -155,7 +154,7 @@ iweather .weatherBox .returnback {
   top: 0;
   left: 0;
   margin: 0.1rem;
-  font-size: 0.2rem;
+  font-size: 0.4rem;
   font-weight: bold;
   color: #ccc;
 }
