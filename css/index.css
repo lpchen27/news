@@ -147,6 +147,14 @@ inews .inews_box .news_list a .detail .author_name {
 inews .inews_box .news_list a .detail .date {
   padding-right: 0.1rem;
 }
+inews .loadMore {
+  height: 0.4rem;
+  line-height: 0.4rem;
+  font-size: 0.20rem;
+  text-align: center;
+  color: #d43d3d;
+  font-weight: bold;
+}
 
 inavcontent {
   margin-top: 0.6rem;

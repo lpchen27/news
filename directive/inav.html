@@ -1,7 +1,7 @@
 <div class="inav_box">
 	<ul>
 		<li ng-click="ajax('top')" class='top active'>头条</li>
-		<li nav-list ng-repeat='nav in navs' ng-click='ajax(nav.class)' class='{{nav.class}}'>{{nav.content}}</li>
+		<li nav-list ng-repeat='nav in navs' ng-click='load(nav.class)' class='{{nav.class}}'>{{nav.content}}</li>
 		<!-- <li class='top'>头条</li>
 		<li class='shehui'>社会</li>
 		<li class='guonei'>国内</li>

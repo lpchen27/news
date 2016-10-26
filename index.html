@@ -114,6 +114,16 @@
 				console.log($cookieStore.get('myCity'));	
 			}			
 		});
+
+		$scope.loadMore = function(){
+			$scope.news_num += 8;
+			$scope.ajax($scope.type);
+		}
+
+		$scope.load = function(type){
+			$scope.news_num = 8
+			$scope.ajax(type);
+		}
 		
 	})
 
