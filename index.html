@@ -93,23 +93,21 @@
 				},
 			}).success(function(data){
 				var pre_datas = $scope.datas;
-				//console.log(pre_datas.length);
 				$scope.datas = data.result.data;
 				$('iheader h3 .iconfont').removeClass('animate_refresh');
-				//console.log($scope.datas.length);
-				//$scope.$apply($scope.datas);
-				//console.log($scope.datas);
+
+				$('ul li.'+ type).addClass('active').siblings().removeClass('active');
 			});
 		}
 		$scope.ajax($scope.type);
 
 		var myCity = new BMap.LocalCity();
 		myCity.get(function(result){
-			//console.log(result);
+			console.log(result);
 			//console.log(string.getCityName(result.name));
 			if(result.name){
 				$scope.myCity = string.getCityName(result.name);
-				alert($scope.myCity);
+				//alert($scope.myCity);
 				$scope.$apply();
 				//$scope.$apply($scope.myCity);
 				$cookieStore.put('myCity',string.getCityName(result.name));

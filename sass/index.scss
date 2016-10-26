@@ -30,6 +30,7 @@ iheader,inavheader{
 		.icon-shuaxin{
 			font-family: 'iconfont';
 			display:inline-block;
+			font-size:0.24rem;
 		}
 		.weather{
 			position:absolute;
@@ -37,9 +38,9 @@ iheader,inavheader{
 			font-size:0.16rem;
 			margin-right:0.1rem;
 			width:0.8rem;
-			height:0.4rem;
-			line-height:0.4rem;
-			top:0.1rem;
+			height:0.3rem;
+			line-height:0.3rem;
+			top:0.15rem;
 			text-align: center;
 			background: #fff;
 			border-radius: 0.04rem;
@@ -47,6 +48,8 @@ iheader,inavheader{
 		}
 
 	}
+
+
 }
 
 inavheader{
@@ -56,7 +59,7 @@ inavheader{
 		left:0;
 		margin-left:0.1rem;
 		margin-right:0.1rem;
-		font-size:0.2rem;
+		font-size:0.32rem;
 	}
 }
 
@@ -70,6 +73,10 @@ inav{
 	overflow:hidden;
 	width:100%;
 	z-index:10;
+
+	.active{
+		color:#d43d3d!important;
+	}
 
 	.inav_box{
 		width:100%;
@@ -169,7 +176,7 @@ inavcontent{
 	font-size:0.16rem;
 
 	.delete_nav,.add_nav{
-		margin-top:0.4rem;
+		margin-top:0.6rem;
 		h3{
 			background:#ddd;
 			height:0.3rem;
@@ -189,8 +196,8 @@ inavcontent{
 				margin: 0 2.5%;
 				margin-top:0.1rem;
 				text-align:center;
-				height:0.25rem;
-				line-height:0.24rem;
+				height:0.3rem;
+				line-height:0.29rem;
 				font-family: '微软雅黑';
 				
 			}
